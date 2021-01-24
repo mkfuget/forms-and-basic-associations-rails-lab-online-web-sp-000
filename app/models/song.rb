@@ -28,7 +28,7 @@ class Song < ActiveRecord::Base
     puts "TESET"
 
     ids.each do |id|
-      note = Note.create(name: id)
+      note = Note.create(content: id)
       puts "TESET"
       self.notes << note
     end
