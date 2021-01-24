@@ -17,6 +17,7 @@ class SongsController < ApplicationController
     if !params[:genre_id].blank?
       @song.genre  = Genre.find(params[:genre_id])
     end
+    puts @song
 
     if @song.save
       redirect_to @song
