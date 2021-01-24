@@ -27,6 +27,7 @@ class Song < ActiveRecord::Base
   def note_ids=(ids)
     ids.each do |id|
       note = Note.create(name: id)
+      puts note
       self.notes << note
     end
   end
