@@ -16,6 +16,7 @@ class SongsController < ApplicationController
     @genre  = Genre.find(params[:genre_id])
     @song = Song.new(song_params)
     @song.genre = @genre
+    @song.save
     if @song.save
       redirect_to @song
     else
