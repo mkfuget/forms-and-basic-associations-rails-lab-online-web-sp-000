@@ -12,8 +12,8 @@ class SongsController < ApplicationController
   end
 
   def create
+    puts params
     @song = Song.new(song_params)
-    binding.pry
 
     if @song.save
       redirect_to @song
