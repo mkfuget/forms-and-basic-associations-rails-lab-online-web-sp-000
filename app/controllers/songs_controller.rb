@@ -13,8 +13,11 @@ class SongsController < ApplicationController
 
   def create
     puts params
-    @genre  = Genre.find(params[:genre_id])
     @song = Song.new(song_params)
+    if !params[:genre_id].blank?
+      @song.genre  = Genre.find(params[:genre_id])
+    end
+
     @song.genre = @genre
     @song.save
     if @song.save
