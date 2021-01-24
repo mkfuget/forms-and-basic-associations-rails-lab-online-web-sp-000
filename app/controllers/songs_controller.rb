@@ -18,8 +18,6 @@ class SongsController < ApplicationController
       @song.genre  = Genre.find(params[:genre_id])
     end
 
-    @song.genre = @genre
-    @song.save
     if @song.save
       redirect_to @song
     else
